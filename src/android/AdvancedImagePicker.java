@@ -105,6 +105,11 @@ public class AdvancedImagePicker extends CordovaPlugin {
             type = "video";
         }
 
+        if (mediaType.equals("IMAGE_AND_VIDEO")) {
+            builder.imageAndVideo();
+            type = "videoOrImage";
+        }
+
         if (max == 1) {
             String finalType = type;
             builder.start(result -> {
